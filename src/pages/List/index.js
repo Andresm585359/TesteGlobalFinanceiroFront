@@ -1,5 +1,6 @@
 import React , { useEffect , useState} from "react";
 import api from "../../services/api";
+import './styles.css';
 
 
 export default function List(){
@@ -32,11 +33,15 @@ export default function List(){
 
 
     return (
-        <div className="list-container">
-         
 
+         
+        <div className="container-global">
+
+
+
+        <div>
         <form onSubmit={SearchSubmit}>
-            <label>Buscar</label>
+            <h1>Search</h1>
             <input
                 className="Search"
                 id="name"
@@ -47,7 +52,7 @@ export default function List(){
                 className="ui compact selection dropdown"
                 value={searchLevel}
                 onChange={(event) => setSearchLevel(event.target.value)}
-            >
+                >
             <option value="" >All</option>
             <option value="Fresh">Fresh</option>
             <option value="In Training">In Training</option>
@@ -60,17 +65,27 @@ export default function List(){
             </select>
             <input type="submit"/>
         </form>
-        <ul>
+        </div>
+
+        <div>
+        <ul className="card-container">
             {list.map(listItem => (
-                <li key={listItem.id}>
-                    <h2>Nome: {listItem.name}</h2>
-                    <img src={listItem.img} width="200px"/>
-                    <h3>Level: {listItem.level}</h3>
+                
+                <div key={listItem.id}>
+                    <div className="container">
+                    <div class="wrapper">
+                    
+                    <div class="banner-image"><img src={listItem.img}/></div>
+                    <h1>Name: {listItem.name}</h1>
+                    
+                    <p>Level: {listItem.level}</p>
                     <br></br>
-                </li>
+                    </div>
+                    </div>
+                </div>
             ))}
         </ul>
-
+        </div>
         
         </div>
 
