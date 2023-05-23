@@ -10,7 +10,7 @@ Installation
 To install the project, please follow these steps:
 
 Clone the repository: git clone https://github.com/Andresm585359/TesteGlobalFinanceiroFront
-Install dependencies: npm install
+Install dependencies: npm install, some dependencies are not uptodate, so it may require download
 Usage
 To start the development server, run the following command:
 
